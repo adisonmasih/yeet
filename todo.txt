@@ -1,0 +1,14 @@
+yeet daily ✅
+yeet buy ✅
+yeet sell ✅
+yeet weekly ✅
+yeet monthly ✅
+yeet beg ✅
+yeet fish ✅
+yeet hunt ✅
+yeet crime ✅
+yeet tictactoe ✅
+yeet rob ✅
+yeet search
+yeet net worth
+yeet img generation: https://www.npmjs.com/package/discord-image-generation?activeTab=readme

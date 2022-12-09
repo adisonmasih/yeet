@@ -1,0 +1,269 @@
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:350
+      throw new DiscordAPIError(data, res.status, request);
+            ^
+
+DiscordAPIError: Unknown interaction
+    at RequestHandler.execute (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:350:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async RequestHandler.push (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:51:14)
+    at async CommandInteraction.reply (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:103:5) {
+  method: 'post',
+  path: '/interactions/991849369357778977/aW50ZXJhY3Rpb246OTkxODQ5MzY5MzU3Nzc4OTc3OmpYNFR0UlpKVlQzVWxzWGE4MUtpZ00yekd3QVM3Y0paNVVTQnQ2Y0tpUUJyRXROOWtXazVFdnlWM0RTZEJXS0hYeWtSeEVkQWJtTkZrNHBzUzJOZW1WZFlWNUcwUGFzS0pIenBCbHRXMTlwWVMyalpOcE53MDQxWU8zZzhVc3Jt/callback',
+  code: 10062,
+  httpStatus: 404,
+  requestData: {
+    json: {
+      type: 4,
+      data: {
+        content: 'The flow of quizzes gambles with lives, happiness, and even destiny itself!',
+        tts: false,
+        nonce: undefined,
+        embeds: undefined,
+        components: undefined,
+        username: undefined,
+        avatar_url: undefined,
+        allowed_mentions: undefined,
+        flags: undefined,
+        message_reference: undefined,
+        attachments: undefined,
+        sticker_ids: undefined
+      }
+    },
+    files: []
+  }
+}
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>
+BrokenPipeError: [Errno 32] Broken pipe
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > Command "hack" does not have the following properties: Category.
+/home/masihman/nonsensebot/commands/hack.js:21
+        return new MessageEmbed()
+        ^
+
+ReferenceError: MessageEmbed is not defined
+    at Command.callback [as _callback] (/home/masihman/nonsensebot/commands/hack.js:21:9)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async SlashCommands.invokeCommand (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/wokcommands/dist/SlashCommands.js:155:23)
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:350
+      throw new DiscordAPIError(data, res.status, request);
+            ^
+
+DiscordAPIError: Unknown interaction
+    at RequestHandler.execute (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:350:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async RequestHandler.push (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:51:14)
+    at async CommandInteraction.reply (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:103:5) {
+  method: 'post',
+  path: '/interactions/992055105782284378/aW50ZXJhY3Rpb246OTkyMDU1MTA1NzgyMjg0Mzc4OjJMU2ZGbmxzZnpPMFN6RXE2WUhNTlVicE9WNGtMSEVxS1RYRlZvNlp1VWZldGVRZTI1czhFVXZjS1ZXbnAwRk1xaWJSV2VWZkN4Q2JXZ3ZDeFdmVmxFYlFWOFBrWGVIdFlneWxRQ1NWWVA0eGwwTWw5Mm9wOFV2c0tRa3BPRGZU/callback',
+  code: 10062,
+  httpStatus: 404,
+  requestData: {
+    json: {
+      type: 4,
+      data: {
+        content: 'This slash command is not properly registered.',
+        tts: false,
+        nonce: undefined,
+        embeds: undefined,
+        components: undefined,
+        username: undefined,
+        avatar_url: undefined,
+        allowed_mentions: undefined,
+        flags: 64,
+        message_reference: undefined,
+        attachments: undefined,
+        sticker_ids: undefined
+      }
+    },
+    files: []
+  }
+}
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:350
+      throw new DiscordAPIError(data, res.status, request);
+            ^
+
+DiscordAPIError: Unknown interaction
+    at RequestHandler.execute (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:350:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async RequestHandler.push (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:51:14)
+    at async CommandInteraction.reply (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:103:5) {
+  method: 'post',
+  path: '/interactions/992235600734330941/aW50ZXJhY3Rpb246OTkyMjM1NjAwNzM0MzMwOTQxOkdNNlZtZUo5WDlYNG9BWExxMEhFeGduZ1B3SlNvNDVNS3JEMlI3ZVFuMHhyUzQ2cExlSzNrSkh0VGpRRnN4Nkdsb0ozQWVrTWJtMnVvb1d1cEhKMmlaTUVPZlJqRzVOSWtMSWNBeGd6d3VKbThZSnRTa0hocW9FYkFvc2Z4Z2Q2/callback',
+  code: 10062,
+  httpStatus: 404,
+  requestData: {
+    json: {
+      type: 4,
+      data: {
+        content: undefined,
+        tts: false,
+        nonce: undefined,
+        embeds: [
+          {
+            title: 'I Like It',
+            type: 'rich',
+            description: '**Dank Memer** Was A **Haathi 🐘** In Their Previous Birth',
+            url: null,
+            timestamp: 0,
+            color: null,
+            fields: [],
+            thumbnail: [Object],
+            image: null,
+            author: [Object],
+            footer: [Object]
+          }
+        ],
+        components: undefined,
+        username: undefined,
+        avatar_url: undefined,
+        allowed_mentions: undefined,
+        flags: undefined,
+        message_reference: undefined,
+        attachments: undefined,
+        sticker_ids: undefined
+      }
+    },
+    files: []
+  }
+}
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:350
+      throw new DiscordAPIError(data, res.status, request);
+            ^
+
+DiscordAPIError: Unknown interaction
+    at RequestHandler.execute (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:350:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async RequestHandler.push (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:51:14)
+    at async CommandInteraction.reply (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:103:5)
+    at async Command.callback [as _callback] (/home/masihman/nonsensebot/commands/hack.js:70:17)
+    at async SlashCommands.invokeCommand (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/wokcommands/dist/SlashCommands.js:155:23) {
+  method: 'post',
+  path: '/interactions/992383794826977280/aW50ZXJhY3Rpb246OTkyMzgzNzk0ODI2OTc3MjgwOnByb3FlNlJLQTV1QXZJUnpzR0hwTktoSHBjdkduZnU5enZVSFNGT2xVZVJ4U0lSeFVPcmdCd0VJOUhEeEhTQVRTOTM0VGpQVGZZVWVtWFBPVHpxN0RDUlM2aUFtSGV3R1BFWUR0bDA2dGQ1b2pQS2l1N0NVdjByZkZ4NFpYbHRr/callback',
+  code: 10062,
+  httpStatus: 404,
+  requestData: {
+    json: {
+      type: 4,
+      data: {
+        content: 'Hacking **Nikto**..',
+        tts: false,
+        nonce: undefined,
+        embeds: undefined,
+        components: undefined,
+        username: undefined,
+        avatar_url: undefined,
+        allowed_mentions: undefined,
+        flags: undefined,
+        message_reference: undefined,
+        attachments: undefined,
+        sticker_ids: undefined
+      }
+    },
+    files: []
+  }
+}
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:350
+      throw new DiscordAPIError(data, res.status, request);
+            ^
+
+DiscordAPIError: Unknown interaction
+    at RequestHandler.execute (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:350:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async RequestHandler.push (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/rest/RequestHandler.js:51:14)
+    at async CommandInteraction.deferReply (/home/masihman/nodevenv/nonsensebot/16/lib/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:61:5) {
+  method: 'post',
+  path: '/interactions/992604015223373895/aW50ZXJhY3Rpb246OTkyNjA0MDE1MjIzMzczODk1OjFXelFJZUl5SWhEYnB1VkR3SWtuQWpKcUowT1lxU0daRnc5dUxUamlLNjdwbGhBcEtmNWR5VkdRTEtGRFBETTZPTGRXd09lWmlzQ1JTeVB0eHZhaVBOd3pyWlNuVWFwME1uVjFsNGdiUFFQRXplQTR2UzlRUWtxOTliUXJDOWxj/callback',
+  code: 10062,
+  httpStatus: 404,
+  requestData: { json: { type: 5, data: { flags: undefined } }, files: [] }
+}
+WOKCommands > Category "Fun" does not have an emoji icon.
+(node:2598118) DeprecationWarning: Passing strings for MessageEmbed#setFooter is deprecated. Pass a sole object instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > Command "help" does not have the following properties: Category,Description.
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+(node:3293623) DeprecationWarning: Passing strings for MessageEmbed#setFooter is deprecated. Pass a sole object instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:
+https://docs.wornoffkeys.com/databases/mongodb
+(node:1618527) DeprecationWarning: Passing strings for MessageEmbed#setFooter is deprecated. Pass a sole object instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
