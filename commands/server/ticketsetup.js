@@ -7,10 +7,10 @@ const {
   ActionRowBuilder,
   ButtonBuilder,
   ButtonStyle,
-} = require("discord.js");
+} = require("discord.js")
 
-const { PARENT_ID, OPEN_TICKET } = process.env;
-const TicketSetup = require("../../schemas/TicketSetup");
+// const { PARENT_ID, OPEN_TICKET } = process.env;
+const TicketSetup = require("../../schemas/TicketSetup")
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -68,51 +68,51 @@ module.exports = {
     ),
   testOnly: true,
   async execute(interaction, client) {
-    const { guild, channel, member, options } = interaction;
+    const { guild, channel, member, options } = interaction
 
     let errorEmbed = new EmbedBuilder().setColor("Red").setAuthor({
       name: client.user.username,
       iconURL: client.user.displayAvatarURL(),
-    });
+    })
 
     let successEmbed = new EmbedBuilder()
       .setColor(client.colors.PRIMARY)
       .setAuthor({
         name: client.user.username,
         iconURL: client.user.displayAvatarURL(),
-      });
+      })
 
-    const ticketChannel = options.getChannel("channel");
-    const channelCategory = options.getChannel("category");
-    const transcriptsChannel = options.getChannel("transcripts");
-    const handlerRole = options.getRole("handler_role");
-    const everyoneRole = options.getRole("everyone_role");
+    const ticketChannel = options.getChannel("channel")
+    const channelCategory = options.getChannel("category")
+    const transcriptsChannel = options.getChannel("transcripts")
+    const handlerRole = options.getRole("handler_role")
+    const everyoneRole = options.getRole("everyone_role")
     const description =
       options.getString("description") ||
-      `Open A Ticket To Discuss Any Of The Issues Listed On The Buttons`;
+      `Open A Ticket To Discuss Any Of The Issues Listed On The Buttons`
 
-    let categories = [];
+    let categories = []
 
     try {
       const categoriesString = options
         .getString("categories")
         .replaceAll(", ", ",")
-        .split(",");
+        .split(",")
 
       categoriesString.forEach((c) => {
-        c = c.split(" ");
+        c = c.split(" ")
         categories.push({
           emoji: c.shift(),
           label: c.join(" "),
-        });
-      });
+        })
+      })
     } catch (e) {
       return interaction.reply({
         embeds: [
           embed.setDescription(`${client.emoji.yeetWrongStanding} | Please Provide Valid Categories!\n
           👉 Eg: '⚠️ Member Reports, 🪲 Bug Reports, ❓ Other' (Max 3)`),
         ],
-      });
+      })
     }
 
     await TicketSetup.findOneAndUpdate(
@@ -133,7 +133,7 @@ module.exports = {
         new: true,
         upsert: true,
       }
-    );
+    )
 
     let embed = new EmbedBuilder()
       .setColor(client.colors.PRIMARY)
@@ -141,17 +141,17 @@ module.exports = {
         name: `${guild.name} | Ticketing System | Powered By YEET`,
         iconURL: guild.iconURL({ dynamic: true }),
       })
-      .setDescription(description);
+      .setDescription(description)
 
-    let row = new ActionRowBuilder();
+    let row = new ActionRowBuilder()
 
     const indexButtonStyles = {
       0: ButtonStyle.Primary,
       1: ButtonStyle.Secondary,
       2: ButtonStyle.Success,
-    };
+    }
 
-    let i = 0;
+    let i = 0
     for (let bt of categories) {
       row.addComponents(
         new ButtonBuilder()
@@ -159,14 +159,14 @@ module.exports = {
           .setLabel(bt.label)
           .setStyle(indexButtonStyles[i])
           .setEmoji(bt.emoji)
-      );
-      i++;
+      )
+      i++
     }
 
     await ticketChannel.send({
       embeds: [embed],
       components: [row],
-    });
+    })
 
     return interaction.reply({
       embeds: [
@@ -174,6 +174,6 @@ module.exports = {
           `${client.emoji.yeetRightStanding} All Set! You're Ready To Go!`
         ),
       ],
-    });
+    })
   },
-};
+}

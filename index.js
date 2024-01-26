@@ -1,4 +1,4 @@
-const generateNonSense = require("./logic.js");
+const generateNonSense = require("./logic.js")
 const {
   Client,
   GatewayIntentBits,
@@ -7,24 +7,24 @@ const {
   PartialTextBasedChannel,
   GuildChannel,
   PermissionOverwriteManager,
-} = require("discord.js");
-const path = require("path");
-const express = require("express");
-const dotenv = require("dotenv");
-const fs = require("fs");
-const { env } = require("process");
-const { default: mongoose } = require("mongoose");
-const mongo = require("./mongo");
-const Welcome = require("./schemas/Welcome");
-const Leave = require("./schemas/Leave");
-const { Player } = require("discord-player");
-const { DisTube } = require("distube");
-const { SpotifyPlugin } = require("@distube/spotify");
+} = require("discord.js")
+const path = require("path")
+const express = require("express")
+const dotenv = require("dotenv")
+const fs = require("fs")
+const { env } = require("process")
+const { default: mongoose } = require("mongoose")
+const mongo = require("./mongo")
+const Welcome = require("./schemas/Welcome")
+const Leave = require("./schemas/Leave")
+const { Player } = require("discord-player")
+const { DisTube } = require("distube")
+const { SpotifyPlugin } = require("@distube/spotify")
 
-dotenv.config();
+dotenv.config()
 
-let isLocal = false;
-let CLIENT_TOKEN = isLocal ? process.env.ALPHA_TOKEN : process.env.TOKEN;
+let isLocal = false
+let CLIENT_TOKEN = process.env.TOKEN
 
 const client = new Client({
   restTimeOffset: 0,
@@ -37,7 +37,7 @@ const client = new Client({
     GatewayIntentBits.MessageContent,
     GatewayIntentBits.GuildVoiceStates,
   ],
-});
+})
 
 // client.player = new Player(client, {
 //   ytdlOptions: {
@@ -56,21 +56,21 @@ client.distube = new DisTube(client, {
     quality: "highestaudio",
     highWaterMark: 1 << 25,
   },
-});
+})
 
-client.commands = new Collection();
-client.buttons = new Collection();
-client.legacyCommands = new Collection();
-client.selectMenus = new Collection();
-client.voiceGenerator = new Collection();
-client.commandArray = [];
-client.legacyCommandArray = [];
+client.commands = new Collection()
+client.buttons = new Collection()
+client.legacyCommands = new Collection()
+client.selectMenus = new Collection()
+client.voiceGenerator = new Collection()
+client.commandArray = []
+client.legacyCommandArray = []
 client.config = {
   prefix: process.env.PREFIX,
   regex: {
     emoji: /\p{Emoji_Presentation}/gu,
   },
-};
+}
 client.emoji = {
   thumbsUp: "👍",
   thumbsDown: "👎",
@@ -87,7 +87,7 @@ client.emoji = {
   yeetGreedy: "<:yeet_greedy:1010734491813285989>",
   yeetCoin: "<:yeet_coin:1005622646903410738>",
   pointCurve: "<:point_curve:1013410014821613671>",
-};
+}
 
 client.colors = {
   RED: "#2F3136",
@@ -101,34 +101,33 @@ client.colors = {
   BLACK: "#2F3136",
   GREY: "#2F3136",
   PRIMARY: "#2F3136",
-};
+}
 
-const functionFolders = fs.readdirSync("./functions/");
+const functionFolders = fs.readdirSync("./functions/")
 
 for (const folder of functionFolders) {
   const functionFiles = fs
     .readdirSync(`./functions/${folder}`)
-    .filter((file) => file.endsWith(".js"));
+    .filter((file) => file.endsWith(".js"))
   for (const file of functionFiles) {
-    require(`./functions/${folder}/${file}`)(client);
+    require(`./functions/${folder}/${file}`)(client)
   }
 }
 
-client.handleEvents();
-client.handleCommands();
-client.handleComponents();
-client.handleLegacyCommands();
-
-(async function () {
+client.handleEvents()
+client.handleCommands()
+client.handleComponents()
+client.handleLegacyCommands()
+;(async function () {
   await mongo().then((mongoose) => {
     try {
-      console.log("Connected to mongo!!");
-      client.login(CLIENT_TOKEN);
+      console.log("Connected to mongo!!")
+      client.login(CLIENT_TOKEN)
     } finally {
       // mongoose.connection.close();
     }
-  });
-})();
+  })
+})()
 
 client.custom = {
   helpers: {},
@@ -140,93 +139,93 @@ client.custom = {
     events: new Collection(),
     categories: [],
   },
-};
+}
 
-client.custom.cache.channels.welcome = new Map();
+client.custom.cache.channels.welcome = new Map()
 
 const loadWelcomeChannels = async () => {
-  const results = await Welcome.find();
+  const results = await Welcome.find()
 
   for (const result of results) {
     client.custom.cache.channels.welcome.set(result._id, {
       channelId: result.channelId,
       message: result.message,
-    });
+    })
   }
-};
+}
 
-loadWelcomeChannels();
+loadWelcomeChannels()
 
 client.custom.helpers.getWelcomeDetails = (guildId) => {
-  return client.custom.cache.channels.welcome.get(guildId);
-};
+  return client.custom.cache.channels.welcome.get(guildId)
+}
 
 // Leave Channel Caching
 
-client.custom.cache.channels.leave = new Map();
+client.custom.cache.channels.leave = new Map()
 
 const loadLeaveChannels = async () => {
-  const results = await Leave.find();
+  const results = await Leave.find()
 
   for (const result of results) {
     client.custom.cache.channels.leave.set(result._id, {
       channelId: result.channelId,
       message: result.message,
-    });
+    })
   }
-};
+}
 
-loadLeaveChannels();
+loadLeaveChannels()
 
 client.custom.helpers.getLeaveDetails = (guildId) => {
-  return client.custom.cache.channels.leave.get(guildId);
-};
+  return client.custom.cache.channels.leave.get(guildId)
+}
 
 client.getItemType = (buyPrice, sellPrice) => {
   if (buyPrice == 0 && sellPrice != 0) {
-    return "collectable";
+    return "collectable"
   } else if (buyPrice != 0 && sellPrice == 0) {
-    return "powerup";
+    return "powerup"
   } else if (buyPrice == 0 && sellPrice != 0) {
-    return "sellable";
+    return "sellable"
   } else if (buyPrice != 0 && sellPrice != 0) {
-    return "item";
+    return "item"
   }
-  return "tool";
-};
+  return "tool"
+}
 
 String.prototype.cap = function () {
   return this.replace(/(?:^|\s)\S/g, function (a) {
-    return a.toUpperCase();
-  });
-};
+    return a.toUpperCase()
+  })
+}
 
 Array.prototype.random = function () {
-  return this[Math.floor(Math.random() * this.length)];
-};
+  return this[Math.floor(Math.random() * this.length)]
+}
 
 Array.prototype.randomX = function (n = 1) {
-  let arr = this;
+  let arr = this
   var result = new Array(n),
     len = arr.length,
-    taken = new Array(len);
-  if (n > len) throw new RangeError("more elements taken than available");
+    taken = new Array(len)
+  if (n > len) throw new RangeError("more elements taken than available")
   while (n--) {
-    var x = Math.floor(Math.random() * len);
-    result[n] = arr[x in taken ? taken[x] : x];
-    taken[x] = --len in taken ? taken[len] : len;
+    var x = Math.floor(Math.random() * len)
+    result[n] = arr[x in taken ? taken[x] : x]
+    taken[x] = --len in taken ? taken[len] : len
   }
-  return result;
-};
+  return result
+}
 
-require("./manuals/guild/server")(client);
+require("./manuals/guild/server")(client)
 
-client.emojiURL = (id) => `https://cdn.discordapp.com/emojis/${id}.png`;
+client.emojiURL = (id) => `https://cdn.discordapp.com/emojis/${id}.png`
 
-require("./system/giveawaySystem")(client);
+require("./system/giveawaySystem")(client)
 
 Array.prototype.common = function () {
-  let array = this;
+  let array = this
   return array.reduce(
     (acc, item) =>
       array.filter((v) => v === acc).length >=
@@ -234,5 +233,5 @@ Array.prototype.common = function () {
         ? acc
         : item,
     null
-  );
-};
+  )
+}

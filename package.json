@@ -49,9 +49,11 @@
     "nodemon": "^2.0.18",
     "pretty-ms": "^7.0.1",
     "request": "^2.88.2",
+    "soundcloud-scraper": "^5.0.3",
     "url-exist": "^3.0.1",
     "url-exists-nodejs": "^0.2.4",
     "wokcommands": "^1.5.3",
+    "youtube-sr": "^4.3.10",
     "yt-search": "^2.10.3",
     "ytdl-core": "^4.11.0"
   },
