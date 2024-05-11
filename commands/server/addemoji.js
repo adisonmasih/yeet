@@ -41,7 +41,7 @@ module.exports = {
           name: client.user.username,
           iconURL: client.user.displayAvatarURL(),
         });
-      return interaction.reply({
+      return interaction.followUp({
         embeds: [embed],
       });
     }
@@ -67,7 +67,7 @@ module.exports = {
           .setDescription(`❌ Please Enter A Valid Code From emoji.gg!`)
           .setColor("Red");
 
-        return interaction.reply({
+        return interaction.followUp({
           embeds: [embed],
         });
       }
@@ -86,7 +86,7 @@ module.exports = {
           `❌ The emoji **${name}** already exists on this server.`
         );
 
-      return interaction.reply({
+      return interaction.followUp({
         embeds: [embed],
       });
     }
@@ -107,7 +107,7 @@ module.exports = {
           `❌ The emoji **${name}'s** max heap size is too large for discord to upload.`
         );
 
-      return interaction.reply({
+      return interaction.followUp({
         embeds: [embed],
       });
     }
@@ -118,7 +118,7 @@ module.exports = {
         `<:${name}:${createdEmoji.id}> The emoji **${name}** has been added to this server.`
       );
 
-    return interaction.reply({
+    return interaction.followUp({
       embeds: [embed],
     });
   },
