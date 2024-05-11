@@ -29,6 +29,8 @@ module.exports = {
         .setRequired(true)
     ),
   async execute(interaction, client) {
+    interaction.deferReply();
+
     if (
       !interaction.member.permissions.has(
         PermissionFlagsBits.ManageEmojisAndStickers
@@ -54,7 +56,7 @@ module.exports = {
       code = code.replaceAll("/add emoji:", "");
     }
 
-    interaction.deferReply();
+
 
     let emoteUrl = `http://cdn3.emoji.gg/emojis/${code}.png`;
     let exists = await urlExists(emoteUrl);
