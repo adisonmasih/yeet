@@ -29,7 +29,7 @@ module.exports = {
         .setRequired(true)
     ),
   async execute(interaction, client) {
-    interaction.deferReply();
+    await interaction.deferReply();
 
     if (
       !interaction.member.permissions.has(
