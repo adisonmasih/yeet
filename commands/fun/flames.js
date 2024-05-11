@@ -71,7 +71,7 @@ module.exports = {
   const desc = `**${user.displayName}** and **${user2.displayName}** are ${flames}!\n${comment}`;
 
     let embed = new EmbedBuilder()
-        .setTitle("FLAMES")
+        .setTitle(flames)
         .setDescription(desc)
         .setColor(client.colors.GREEN)
         .setAuthor({
