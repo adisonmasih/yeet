@@ -6,7 +6,7 @@ module.exports = {
     .addUserOption((option) =>
       option.setName("user").setDescription("Who's our target")
     ),
-  testOnly: true,
+  testOnly: false,
   async execute(interaction, client) {
     const user = interaction.options.getUser("user") || interaction.user;
 
