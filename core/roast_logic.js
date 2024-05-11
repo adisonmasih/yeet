@@ -1,4 +1,4 @@
-const roasts = [
+let roasts = [
 "You are what happens when women drink during pregnancy.",
 "When I look at you, I wish I could meet you again for the first time… and walk past.",
 "You are the sun in my life… now get 93 million miles away from me.",
