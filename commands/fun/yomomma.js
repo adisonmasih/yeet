@@ -109,7 +109,6 @@ module.exports = {
     ),
   testOnly: true,
   async execute(interaction, client) {
-    interaction.deferReply();
     const user = interaction.options.getUser("target") || interaction.user;
     let joke = jokes[Math.floor(Math.random() * jokes.length)];
 
