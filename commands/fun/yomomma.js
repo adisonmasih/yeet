@@ -125,7 +125,7 @@ module.exports = {
         iconURL: interaction.user.displayAvatarURL(),
       });
 
-    interaction.editReply({
+    interaction.reply({
       embeds: [embed],
     });
   },
