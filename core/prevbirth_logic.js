@@ -1,34 +1,34 @@
 const births = [
     'Cock 🐓',
-    'Khujhli Wala Kutta 🐶',
+    'Itchy Dog 🐶',
     'Gorilla 🦍',
     'Orangutan 🦧',
     'Red Ass Monkey 🐵',
     'Wolf 🐺',
     'Cat 🐱',
     'Tiger 🐯',
-    'Ghoda 🐴',
+    'Horse 🐴',
     'Gay Unicorn 🦄',
     'Pig 🐷',
     'Boar 🐗',
     'Camel 🐪',
     'Giraffe 🦒',
-    'Haathi 🐘',
-    'Chuha 🐭',
-    'Chamkadar 🦇',
+    'Elephant 🐘',
+    'Mouse 🐭',
+    'Bat 🦇',
     'Panda 🐼',
     'Chick 🐤',
     'Turtle 🐢',
-    'Aaasteen Ka Saap 🐍',
+    'Snake 🐍',
     'T-Rex 🦖',
     'Whale 🐋',
     'Dolphin 🐬',
-    'Machli 🐠',
+    'Fish 🐠',
     'Snail 🐌',
 ]
 
 
-function getPrevBirth () {
+function getPrevBirth() {
     return births[Math.floor(Math.random() * births.length)]
 }
 
