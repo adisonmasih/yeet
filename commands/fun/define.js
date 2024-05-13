@@ -34,7 +34,7 @@ module.exports = {
                 .setDescription(firstMeaning)
                 .setColor("Random")
                 .setFooter({
-                    text: `Requested by <@${interaction.user.id}>`,
+                    text: `Requested by ${interaction.user.tag}`,
                     iconURL: client.user.displayAvatarURL({ dynamic: true }),
                 })
                 .setTimestamp()
