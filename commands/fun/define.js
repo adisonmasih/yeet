@@ -19,7 +19,7 @@ module.exports = {
         if (res.status === 404) {
             embed.setTitle("Word Not Found")
                 .setDescription("The word you are looking for is not found in the dictionary")
-                .setColor("RED")
+                .setColor("Red")
         }
 
         if (res.status === 200) {
