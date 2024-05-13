@@ -30,7 +30,7 @@ module.exports = {
 
             embed.setTitle(word)
                 .setDescription(text)
-                .setColor("RANDOM")
+                .setColor("Random")
                 .setFooter({
                     text: "Powered by DictionaryAPI",
                     iconURL: client.user.displayAvatarURL({ dynamic: true }),
