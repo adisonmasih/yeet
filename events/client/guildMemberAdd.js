@@ -115,7 +115,7 @@ module.exports = {
       files: [attachment],
     });
 
-    fs.unlinkSync(`./outputs/${jimpImg}`);
+    fs.unlinkSync(__dirname + `./outputs/${randomName}`);
 
     // end welcome
 
