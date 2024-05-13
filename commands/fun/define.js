@@ -12,7 +12,7 @@ module.exports = {
     async execute(interaction, client) {
         const word = interaction.options.getString("word");
 
-        await interaction.deferReply({ ephemeral: true });
+        await interaction.deferReply();
 
         const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
 
@@ -38,6 +38,10 @@ module.exports = {
                     iconURL: client.user.displayAvatarURL({ dynamic: true }),
                 })
                 .setTimestamp()
+
+            // get only the first two meanings
+
+            meanings.splice(2)
 
             let embedFields = []
 
