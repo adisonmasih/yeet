@@ -69,7 +69,7 @@ module.exports = {
 
     const jimpImg = await Jimp.read(userAvatar);
     jimpImg.circle();
-    await jimpImg.write(`./outputs/${randomName}`);
+    await jimpImg.write(__dirname + `./outputs/${randomName}`);
 
     GlobalFonts.registerFromPath("./fonts/segoeui.ttf", "Segoe UI");
 
@@ -83,7 +83,7 @@ module.exports = {
 
     ctx.drawImage(background, x, y, canvas.width, canvas.height);
 
-    const avatar = await Canvas.loadImage(`./outputs/${randomName}`);
+    const avatar = await Canvas.loadImage(__dirname + `./outputs/${randomName}`);
 
     x = canvas.width / 2 - 150 / 2;
     y = canvas.height / 2 - 150 / 2 - 50;
