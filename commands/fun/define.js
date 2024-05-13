@@ -12,6 +12,8 @@ module.exports = {
     async execute(interaction, client) {
         const word = interaction.options.getString("word");
 
+        await interaction.deferReply({ ephemeral: true });
+
         const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
 
         let embed = new EmbedBuilder()
@@ -37,23 +39,33 @@ module.exports = {
                 })
                 .setTimestamp()
 
+            let embedFields = []
+
             meanings.forEach(meaning => {
                 const { partOfSpeech, definitions } = meaning
 
-                embed.addField({
+                let definitionList = []
+
+                definitions.forEach((definition, index) => {
+                    const { definition: def, example, synonyms } = definition
+
+                    let synonymsList = synonyms ? synonyms.join(", ") : "None"
+
+                    definitionList.push(`**${index + 1}.** ${def}\n**Example:** ${example || "None"}\n**Synonyms:** ${synonymsList}`)
+                })
+
+                embedFields.push({
                     name: partOfSpeech,
-                    value: definitions.map((def, i) => {
-                        return `**${i + 1}.** ${def.definition}\n*Example:* ${def.example ? def.example : "No Example"}`
-                    }).join("\n\n")
+                    value: definitionList.join("\n\n"),
                 })
             })
+
+            embed.addFields(embedFields)
         }
 
 
 
-
-
-        interaction.reply({
+        interaction.editReply({
             embeds: [embed],
         });
     },
