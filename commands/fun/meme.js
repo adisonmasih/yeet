@@ -24,7 +24,7 @@ module.exports = {
             .setTimestamp()
 
         const button = new ButtonBuilder()
-            .setStyle("LINK")
+            .setStyle("Link")
             .setLabel("View on Reddit")
             .setURL(postLink)
 
