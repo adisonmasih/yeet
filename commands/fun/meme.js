@@ -16,7 +16,10 @@ module.exports = {
             .setTitle(title)
             .setURL(postLink)
             .setImage(url)
-            .setFooter(`👍 ${ups} | Author: ${author} | Subreddit: r/${subreddit}`)
+            .setFooter({
+                text: `👍 ${ups} | Author: ${author} | Subreddit: ${subreddit}`,
+                iconURL: client.user.displayAvatarURL({ dynamic: true }),
+            })
             .setColor("RANDOM")
             .setTimestamp()
 
