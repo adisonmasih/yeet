@@ -30,45 +30,17 @@ module.exports = {
 
             const { text, audio } = phonetics[0]
 
+            const firstMeaning = meanings[0].definitions[0].definition
+
             embed.setTitle(word)
-                .setDescription(text)
+                .setDescription(firstMeaning)
                 .setColor("Random")
                 .setFooter({
-                    text: "Powered by DictionaryAPI",
+                    text: `Pronunciation: ${text}`,
                     iconURL: client.user.displayAvatarURL({ dynamic: true }),
                 })
                 .setTimestamp()
 
-            meanings = [meanings[0]]
-
-            let embedFields = []
-
-            meanings.forEach(meaning => {
-                const { partOfSpeech, definitions } = meaning
-
-                let definitionList = []
-
-                definitions.forEach((definition, index) => {
-                    const { definition: def, example, synonyms } = definition
-
-                    let synonymsList = synonyms ? synonyms.join(", ") : "None"
-
-                    definitionList.push(`**${index + 1}.** ${def}\n**Example:** ${example || "None"}\n**Synonyms:** ${synonymsList}`)
-                })
-
-                // make sure its not more than 1024 characters
-
-                if (definitionList.join("\n\n").length > 1024) {
-                    definitionList[definitionList.length - 1] = definitionList[definitionList.length - 1].slice(0, 1020) + "..."
-                }
-
-                embedFields.push({
-                    name: partOfSpeech,
-                    value: definitionList.join("\n\n"),
-                })
-            })
-
-            embed.addFields(embedFields)
         }
 
 
