@@ -16,7 +16,7 @@ module.exports = {
     ),
   testOnly: true,
   async execute(interaction, client) {
-    interaction.deferReply();
+    await interaction.deferReply();
     const user = interaction.options.getUser("target") ?? interaction.user;
     let nhie = getNhie();
 
@@ -42,7 +42,7 @@ module.exports = {
     const buttonRow = new ActionRowBuilder().addComponents(yesButton, noButton);
 
     try {
-      await interaction.followUp({
+      await interaction.reply({
         embeds: [embed],
         components: [buttonRow],
       });
