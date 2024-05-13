@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ActionRowBuilder } = require("discord.js");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("meme")
@@ -28,10 +28,13 @@ module.exports = {
             .setLabel("View on Reddit")
             .setURL(postLink)
 
+        const row = new ActionRowBuilder()
+            .addComponents(button)
+
 
         interaction.reply({
             embeds: [embed],
-            buttons: [button],
+            components: [row]
         });
     },
 };
