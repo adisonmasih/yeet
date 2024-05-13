@@ -41,7 +41,7 @@ module.exports = {
 
             // get only the first two meanings
 
-            meanings.splice(2)
+            meanings.splice(1)
 
             let embedFields = []
 
@@ -57,6 +57,12 @@ module.exports = {
 
                     definitionList.push(`**${index + 1}.** ${def}\n**Example:** ${example || "None"}\n**Synonyms:** ${synonymsList}`)
                 })
+
+                // make sure its not more than 1024 characters
+
+                if (definitionList.join("\n\n").length > 1024) {
+                    definitionList[definitionList.length - 1] = definitionList[definitionList.length - 1].slice(0, 1020) + "..."
+                }
 
                 embedFields.push({
                     name: partOfSpeech,
