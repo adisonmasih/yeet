@@ -39,9 +39,7 @@ module.exports = {
                 })
                 .setTimestamp()
 
-            // get only the first two meanings
-
-            meanings.splice(1)
+            meanings = [meanings[0]]
 
             let embedFields = []
 
