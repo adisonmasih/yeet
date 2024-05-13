@@ -42,7 +42,7 @@ module.exports = {
     const buttonRow = new ActionRowBuilder().addComponents(yesButton, noButton);
 
     try {
-      await interaction.reply({
+      await interaction.followUp({
         embeds: [embed],
         components: [buttonRow],
       });
