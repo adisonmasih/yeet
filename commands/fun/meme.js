@@ -17,7 +17,7 @@ module.exports = {
             .setURL(postLink)
             .setImage(url)
             .setFooter({
-                text: `👍 ${ups} | Author: ${author} | Subreddit: ${subreddit}`,
+                text: `👍 ${ups} | Author: ${author} | Subreddit: r/${subreddit}`,
                 iconURL: client.user.displayAvatarURL({ dynamic: true }),
             })
             .setColor("Random")
@@ -25,6 +25,13 @@ module.exports = {
 
         interaction.reply({
             embeds: [embed],
+            buttons: [
+                {
+                    style: "LINK",
+                    label: "View on Reddit",
+                    url: postLink,
+                },
+            ],
         });
     },
 };
