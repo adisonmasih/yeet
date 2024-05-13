@@ -20,7 +20,7 @@ module.exports = {
                 text: `👍 ${ups} | Author: ${author} | Subreddit: ${subreddit}`,
                 iconURL: client.user.displayAvatarURL({ dynamic: true }),
             })
-            .setColor("RANDOM")
+            .setColor("Random")
             .setTimestamp()
 
         interaction.reply({
