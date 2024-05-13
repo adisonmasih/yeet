@@ -26,7 +26,7 @@ module.exports = {
 
         if (res.status === 200) {
             const json = await res.json()
-            const { word, phonetics, meanings } = json[0]
+            let { word, phonetics, meanings } = json[0]
 
             const { text, audio } = phonetics[0]
 
