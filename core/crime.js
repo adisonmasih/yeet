@@ -484,7 +484,7 @@ class Crime {
             .random()
             .replaceAll(
               "%n",
-              `**${amount}** <:yeet_coin:1005622646903410738>`
+              `**${amount}** <:yeet_coin:1239568630337900715>`
             )
           : this.fails.random(),
       rewardAmount: amount,

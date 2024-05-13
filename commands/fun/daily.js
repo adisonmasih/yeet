@@ -12,7 +12,7 @@ module.exports = {
       (await User.findOne({ discordId: user.id })) ||
       (await new User({ discordId: user.id }).save());
 
-    if (userData.cooldowns.daily > Date.now()) {
+    if (userData.cooldowns.daily > Date.now() && !client.isSpecial(user.id)) {
       let embed = new EmbedBuilder()
         .setTitle(`Not So Soon.. `)
         .setDescription(

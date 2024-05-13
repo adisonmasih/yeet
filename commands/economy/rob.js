@@ -22,7 +22,7 @@ module.exports = {
     if (!userData.cooldowns?.rob) {
       userData.cooldowns.rob = Date.now();
     }
-    if (userData.cooldowns.rob > Date.now()) {
+    if (userData.cooldowns.rob > Date.now() && !client.isSpecial(user.id)) {
       let embed = new EmbedBuilder()
         .setTitle("TF STOP")
         .setDescription(

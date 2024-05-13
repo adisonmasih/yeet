@@ -23,7 +23,7 @@ module.exports = {
     }
 
     let userData = await User.findOne({ discordId: user.id });
-    if (userData.cooldowns.fish > Date.now()) {
+    if (userData.cooldowns.fish > Date.now() && !client.isSpecial(user.id)) {
       let embed = new EmbedBuilder()
         .setTitle("Slow Down Mate..")
         .setDescription(

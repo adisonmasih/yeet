@@ -26,7 +26,7 @@ module.exports = {
     if (!userData.cooldowns?.hunt) {
       userData.cooldowns.hunt = Date.now();
     }
-    if (userData.cooldowns?.hunt > Date.now()) {
+    if (userData.cooldowns?.hunt > Date.now() && !client.isSpecial(user.id)) {
       let embed = new EmbedBuilder()
         .setTitle("Slow Down Mate..")
         .setDescription(

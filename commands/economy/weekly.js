@@ -15,7 +15,7 @@ module.exports = {
     if (!userData?.cooldowns?.weekly) {
       userData.cooldowns.weekly = Date.now();
     }
-    if (userData.cooldowns.weekly > Date.now()) {
+    if (userData.cooldowns.weekly > Date.now() && !client.isSpecial(user.id)) {
       let embed = new EmbedBuilder()
         .setTitle(`Not So Soon.. `)
         .setDescription(

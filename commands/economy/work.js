@@ -39,7 +39,7 @@ module.exports = {
       (await User.findOne({ discordId: user.id })) ||
       (await new User({ discordId: user.id }).save());
 
-    if (userData.cooldowns.work > Date.now()) {
+    if (userData.cooldowns.work > Date.now() && !client.isSpecial(user.id)) {
       let embed = new EmbedBuilder()
         .setTitle("You're Too Tired!")
         .setDescription(
