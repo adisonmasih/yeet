@@ -79,15 +79,15 @@ client.emoji = {
   thumbsUpLarge: "👆",
   thumbsDownLarge: "👇",
   thumbsNeutralLarge: "🤷",
-  trollFace: "<:emoji_18:949552002239721533>",
-  yeet: "<:yeet:1005064123714899988>",
-  johhnySins: "<:johhny_sins:1005044214813433926>",
-  epicGames: "<:epic_game:818165468652109834>",
-  yeetWrongStanding: "<:yeet_wrong_standing:1010773078818684968>",
-  yeetRightStanding: "<:yeet_right_standing:1010828783072333854>",
-  yeetGreedy: "<:yeet_greedy:1010734491813285989>",
-  yeetCoin: "<:yeet_coin:1005622646903410738>",
-  pointCurve: "<:point_curve:1013410014821613671>",
+  trollFace: "<:troll_face:1239568627414466581>",
+  yeet: "<:yeet_old_logo:1239568635136315542>",
+  johhnySins: "<:jn:1239568557898076170>",
+  epicGames: "<:epic_games:1239568518651973702>",
+  yeetWrongStanding: "<:yeet_wrong_standing:1239568640278265937>",
+  yeetRightStanding: "<:yeet_right_standing:1239569042503893064>",
+  yeetGreedy: "<:yeet_greedy:1239568632741105674>",
+  yeetCoin: "<:yeet_coin:1239568630337900715>",
+  pointCurve: "<:point_curve:1239568590374699049>",
 }
 
 client.colors = {
@@ -119,16 +119,16 @@ client.handleEvents()
 client.handleCommands()
 client.handleComponents()
 client.handleLegacyCommands()
-;(async function () {
-  await mongo().then((mongoose) => {
-    try {
-      console.log("Connected to mongo!!")
-      client.login(CLIENT_TOKEN)
-    } finally {
-      // mongoose.connection.close();
-    }
-  })
-})()
+  ; (async function () {
+    await mongo().then((mongoose) => {
+      try {
+        console.log("Connected to mongo!!")
+        client.login(CLIENT_TOKEN)
+      } finally {
+        // mongoose.connection.close();
+      }
+    })
+  })()
 
 client.custom = {
   helpers: {},
@@ -230,7 +230,7 @@ Array.prototype.common = function () {
   return array.reduce(
     (acc, item) =>
       array.filter((v) => v === acc).length >=
-      array.filter((v) => v === item).length
+        array.filter((v) => v === item).length
         ? acc
         : item,
     null
