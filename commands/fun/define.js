@@ -26,9 +26,7 @@ module.exports = {
 
         if (res.status === 200) {
             const json = await res.json()
-            let { word, phonetics, meanings } = json[0]
-
-            const { text, audio } = phonetics[0]
+            let { word, meanings } = json[0]
 
             const firstMeaning = meanings[0].definitions[0].definition
 
@@ -36,7 +34,7 @@ module.exports = {
                 .setDescription(firstMeaning)
                 .setColor("Random")
                 .setFooter({
-                    text: `Pronunciation: ${text}`,
+                    text: `Requested by <@${interaction.user.id}>`,
                     iconURL: client.user.displayAvatarURL({ dynamic: true }),
                 })
                 .setTimestamp()
