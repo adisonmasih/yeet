@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder } = require("discord.js");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("meme")
@@ -23,15 +23,15 @@ module.exports = {
             .setColor("Random")
             .setTimestamp()
 
+        const button = new ButtonBuilder()
+            .setStyle("LINK")
+            .setLabel("View on Reddit")
+            .setURL(postLink)
+
+
         interaction.reply({
             embeds: [embed],
-            buttons: [
-                {
-                    style: "LINK",
-                    label: "View on Reddit",
-                    url: postLink,
-                },
-            ],
+            buttons: [button],
         });
     },
 };
