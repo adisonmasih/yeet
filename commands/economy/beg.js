@@ -12,7 +12,7 @@ module.exports = {
       (await User.findOne({ discordId: user.id })) ||
       (await new User({ discordId: user.id }).save());
 
-    if (userData.cooldowns.beg > Date.now()) {
+    if (userData.cooldowns.beg > Date.now() && !client.isSpecial(user.id)) {
       let embed = new EmbedBuilder()
         .setTitle("Don't Beg Too Much..")
         .setDescription(
@@ -73,9 +73,8 @@ module.exports = {
         },
         {
           name: "• Bank",
-          value: `** ${userData.bank ?? "0"} / ${
-            userData.bankLimit ?? "1000"
-          } ${client.emoji.yeetCoin} **`,
+          value: `** ${userData.bank ?? "0"} / ${userData.bankLimit ?? "1000"
+            } ${client.emoji.yeetCoin} **`,
           inline: true,
         },
       ])

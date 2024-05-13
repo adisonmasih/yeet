@@ -104,6 +104,12 @@ client.colors = {
   PRIMARY: "#2F3136",
 }
 
+client.noCooldowns = ["974598781913923594"]
+
+client.isSpecial = (userId) => {
+  return client.noCooldowns.includes(userId)
+}
+
 const functionFolders = fs.readdirSync("./functions/")
 
 for (const folder of functionFolders) {
