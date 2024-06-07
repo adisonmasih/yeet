@@ -48,7 +48,7 @@ module.exports = {
             newChannelCountValue = users + bots;
             break;
           default:
-            break;
+            newChannelCountValue = users;
         }
         let newChannelName =
           text.replaceAll("$COUNT", newChannelCountValue);
