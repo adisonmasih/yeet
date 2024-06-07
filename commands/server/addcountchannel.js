@@ -121,10 +121,10 @@ module.exports = {
         newChannelCountValue = users + bots;
         break;
       default:
-        break;
+        newChannelCountValue = users;
     }
     let newChannelName =
-      type == "goal" ? text : text.replaceAll("$COUNT", newChannelCountValue);
+      text.replaceAll("$COUNT", newChannelCountValue);
     console.log("REACHED HERE " + newChannelName);
 
     if (!result) {
@@ -177,8 +177,8 @@ module.exports = {
       .setColor("Green")
       .setDescription(
         "✅ Successfully Added A Channel For The " +
-          type.toUpperCase() +
-          " Count"
+        type.toUpperCase() +
+        " Count"
       )
       .setAuthor({
         name: client.user.username,
