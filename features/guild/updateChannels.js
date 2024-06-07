@@ -51,9 +51,7 @@ module.exports = {
             break;
         }
         let newChannelName =
-          type == "goal"
-            ? text
-            : text.replaceAll("$COUNT", newChannelCountValue);
+          text.replaceAll("$COUNT", newChannelCountValue);
 
         await channel.edit({
           name: newChannelName,
