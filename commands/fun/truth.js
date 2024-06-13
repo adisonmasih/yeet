@@ -6,6 +6,8 @@ module.exports = {
     .setDescription("Yeet Bot ❌ | Secret Revealing Bot ✅")
     .addUserOption((option) =>
       option.setName("target").setDescription("the target user")
+    ).addStringOption(
+      option => option.setName("rating").setDescription("The rating of the truth").addChoice("PG", "pg").addChoice("PG-13", "pg13").addChoice("R", "r").setRequired(false)
     ),
   testOnly: true,
   async execute(interaction, client) {
