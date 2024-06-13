@@ -22,10 +22,11 @@ module.exports = {
   testOnly: true,
   async execute(interaction, client) {
     const user = interaction.options.getUser("target") || interaction.user;
+    const rating = interaction.options.getString("rating") || "pg";
     const message = ``;
 
 
-    let res = await fetch("https://api.truthordarebot.xyz/v1/truth?rating=pg13")
+    let res = await fetch(`https://api.truthordarebot.xyz/v1/truth?rating=${rating}`)
     let resJSON = await res.json();
     let truth = resJSON?.question ?? "Something went wrong? try this command again";
 
