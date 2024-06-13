@@ -11,31 +11,11 @@ module.exports = {
   async execute(interaction, client) {
     const user = interaction.options.getUser("target") || interaction.user;
     const message = ``;
-    /*let res = await fetch("https://randommer.io/truth-dare-generator", {
-	method: "POST",
-	body: {
-	  type: "truth",
-	  category: "dirty"
-	},
-    });
-*/
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
-var urlencoded = new URLSearchParams();
-urlencoded.append("category", "dirty");
-urlencoded.append("type", "truth");
 
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: urlencoded,
-  redirect: 'follow'
-};
-
-    let res = await fetch("https://randommer.io/truth-dare-generator", requestOptions)
+    let res = await fetch("https://api.truthordarebot.xyz/v1/truth?rating=pg13")
     let resJSON = await res.json();
-    let truth = resJSON.text;
+    let truth = resJSON?.question ?? "Something went wrong? try this command again";
 
     const embed = new EmbedBuilder()
       .setTitle(`${interaction.user.username} Asked:`)
