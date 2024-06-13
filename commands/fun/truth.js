@@ -7,7 +7,17 @@ module.exports = {
     .addUserOption((option) =>
       option.setName("target").setDescription("the target user")
     ).addStringOption(
-      option => option.setName("rating").setDescription("The rating of the truth").addChoice("PG", "pg").addChoice("PG-13", "pg13").addChoice("R", "r").setRequired(false)
+      option => option.setName("rating").setDescription("The rating of the truth").addChoices({
+        name: "PG",
+        value: "pg"
+      }, {
+        name: "PG-13",
+        value: "pg13"
+      }, {
+        name: "R",
+        value: "r"
+
+      })
     ),
   testOnly: true,
   async execute(interaction, client) {
