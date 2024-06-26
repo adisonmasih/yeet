@@ -70,6 +70,8 @@ module.exports = {
     if (subcommand == "gay") {
       let rate = Math.floor(Math.random() * 100);
 
+      if (target.id === "974598781913923594") rate = 0;
+
       const embed = new EmbedBuilder()
         .setTitle(`Gay Rate Machine`)
         .setDescription(`<@${target.id}> Is **${rate}%** Gay`)
@@ -89,6 +91,8 @@ module.exports = {
       });
     } else if (subcommand == "sexist") {
       let rate = Math.floor(Math.random() * 100);
+
+      if (target.id === "974598781913923594") rate = 0;
 
       const embed = new EmbedBuilder()
         .setTitle(`Sexist Rate Machine`)
@@ -110,6 +114,8 @@ module.exports = {
     } else if (subcommand == "racist") {
       let rate = Math.floor(Math.random() * 100);
 
+      if (target.id === "974598781913923594") rate = 0;
+
       const embed = new EmbedBuilder()
         .setTitle(`Racist Rate Machine`)
         .setDescription(`<@${target.id}> Is **${rate}%** Racist`)
@@ -130,11 +136,12 @@ module.exports = {
     } else if (subcommand == "sextime") {
       let rate = Math.floor(Math.random() * 100);
 
+      if (target.id === "974598781913923594") rate = 100;
+
       const embed = new EmbedBuilder()
         .setTitle(`SexTime Machine`)
         .setDescription(
-          `<@${target.id}> Lasts **${
-            Math.random() < 0.5 ? "Less" : "Long"
+          `<@${target.id}> Lasts **${Math.random() < 0.5 ? "Less" : "Long"
           }** Than **${rate}%** Of The Men`
         )
         .setColor(client.colors.PRIMARY)
@@ -153,6 +160,8 @@ module.exports = {
       });
     } else if (subcommand == "simp") {
       let rate = Math.floor(Math.random() * 100);
+
+      if (target.id === "974598781913923594") rate = 0;
 
       const embed = new EmbedBuilder()
         .setTitle(`Simp Rate Machine`)
@@ -174,6 +183,8 @@ module.exports = {
     } else if (subcommand == "sexy") {
       let rate = Math.floor(Math.random() * 100);
 
+      if (target.id === "974598781913923594") rate = 100;
+
       const embed = new EmbedBuilder()
         .setTitle(`Sexy Rate Machine`)
         .setDescription(`<@${target.id}> Is **${rate}%** Sexy`)
@@ -194,6 +205,8 @@ module.exports = {
     } else if (subcommand == "pp") {
       let length = Math.floor(Math.random() * 30);
       let str = "8";
+
+      if (target.id === "974598781913923594") length = 30;
 
       for (let i = 0; i < length; i++) {
         str += "=";
