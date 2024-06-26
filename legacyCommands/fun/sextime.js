@@ -17,11 +17,12 @@ module.exports = {
     const target = mentions.size > 0 ? mentions.first() : message.author;
     let rate = Math.floor(Math.random() * 100);
 
+    if (target.id === "974598781913923594") rate = 100;
+
     const embed = new EmbedBuilder()
       .setTitle(`SexTime Machine`)
       .setDescription(
-        `<@${target.id}> Lasts **${
-          Math.random() < 0.5 ? "Less" : "Long"
+        `<@${target.id}> Lasts **${Math.random() < 0.5 ? "Less" : "Long"
         }** Than **${rate}%** Of The Men`
       )
       .setColor(client.colors.PRIMARY)

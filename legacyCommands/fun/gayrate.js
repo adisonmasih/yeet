@@ -17,6 +17,8 @@ module.exports = {
     const target = mentions.size > 0 ? mentions.first() : message.author;
     let rate = Math.floor(Math.random() * 100);
 
+    if (target.id === "974598781913923594") rate = 0;
+
     const embed = new EmbedBuilder()
       .setTitle(`Gay Rate Machine`)
       .setDescription(`<@${target.id}> Is **${rate}%** Gay`)

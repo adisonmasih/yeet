@@ -15,8 +15,12 @@ module.exports = {
   },
   async execute(message, args, client, mentions) {
     const target = mentions.size > 0 ? mentions.first() : message.author;
+
+
     let length = Math.floor(Math.random() * 30);
     let str = "8";
+
+    if (target.id === "974598781913923594") length = 30;
 
     for (let i = 0; i < length; i++) {
       str += "=";
