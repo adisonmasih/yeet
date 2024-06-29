@@ -7,7 +7,7 @@ module.exports = {
       activities: [
         {
           // type: 2,
-          name: "/help | yeetbot.ml",
+          name: "with your mom 😼",
         },
       ],
       status: "online",
@@ -17,7 +17,7 @@ module.exports = {
         activities: [
           {
             // type: "Listening",
-            name: "/help | yeetbot.ml",
+            name: "with your mom 😼",
           },
         ],
         status: "online",
